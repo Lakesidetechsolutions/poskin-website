@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="370" viewBox="0 0 250 185" xmlns="http://www.w3.org/2000/svg">
+  <!-- green swoosh -->
+  <polygon points="6,168 246,4 214,118" fill="#2fb67d"></polygon>
+  <!-- oval -->
+  <ellipse cx="125" cy="94" rx="114" ry="80" fill="none" stroke="#ffffff" stroke-width="9"></ellipse>
+  <!-- P -->
+  <text x="58" y="138" font-family="Liberation Serif, Times New Roman, serif" font-weight="700" font-size="128" fill="#ffffff" stroke="#23272a" stroke-width="5" paint-order="stroke">P</text>
+  <!-- FS -->
+  <text x="112" y="150" font-family="Liberation Serif, Times New Roman, serif" font-weight="700" font-size="64" fill="#ffffff" stroke="#23272a" stroke-width="4" paint-order="stroke" letter-spacing="-2">FS</text>
+</svg>

@@ -1,0 +1,4 @@
+# Plain HTML site: no build step, publish the repo root.
+[build]
+  publish = "."
+  command = ""
