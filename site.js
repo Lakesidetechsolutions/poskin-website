@@ -108,3 +108,48 @@ document.querySelectorAll('[data-year]').forEach(function (el) {
   window.addEventListener('load', function () { setTimeout(toTop, 0); });
   window.addEventListener('pageshow', function (e) { if (e.persisted) toTop(); });
 })();
+
+// Products dropdown: tap/click toggles (needed for phones)
+document.querySelectorAll('.nav-drop').forEach(function (d) {
+  var b = d.querySelector('.drop-btn');
+  b.addEventListener('click', function (e) {
+    e.preventDefault(); e.stopPropagation();
+    var open = d.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function (e) { if (!d.contains(e.target)) { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+});
+
+// Product search (products page)
+(function () {
+  var input = document.getElementById('psearch'), box = document.getElementById('psearch-results');
+  if (!input) return;
+  var pages = { cattle:'cattle.html', poultry:'poultry.html', horses:'horses.html', 'goats-sheep':'goats-sheep.html', pigs:'pigs.html', rabbits:'rabbits.html', 'dogs-cats':'dogs-cats.html', birds:'wild-birds.html', deer:'deer.html' };
+  var items = [];
+  document.querySelectorAll('.product[id]').forEach(function (art) {
+    var cat = art.querySelector('h3').textContent, id = art.id;
+    art.querySelectorAll('.lists li').forEach(function (li) {
+      items.push({ t: li.textContent.trim(), cat: cat, id: id });
+    });
+    items.push({ t: cat, cat: 'Category', id: id });
+  });
+  function esc(s) { return s.replace(/[&<>]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;' }[c]; }); }
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    if (q.length < 2) { box.hidden = true; box.innerHTML = ''; return; }
+    var words = q.split(/\s+/);
+    var hits = items.filter(function (it) { var s = (it.t + ' ' + it.cat).toLowerCase(); return words.every(function (w) { return s.indexOf(w) > -1; }); }).slice(0, 12);
+    box.hidden = false;
+    if (!hits.length) { box.innerHTML = '<div class="none">No match. Give us a call at 715-357-3350 and we can probably order it.</div>'; return; }
+    box.innerHTML = hits.map(function (h) {
+      var label = esc(h.t);
+      words.forEach(function (w) { if (w) label = label.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '<mark>$1</mark>'); });
+      var href = pages[h.id] || ('#' + h.id);
+      return '<a href="' + href + '" data-id="' + h.id + '"><span>' + label + '</span><small>' + esc(h.cat) + '</small></a>';
+    }).join('');
+  });
+  box.addEventListener('click', function (e) {
+    var a = e.target.closest('a'); if (!a || a.getAttribute('href').charAt(0) !== '#') return;
+    var d = document.querySelector('#' + a.dataset.id + ' details'); if (d) d.open = true;
+  });
+})();
