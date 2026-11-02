@@ -848,3 +848,4 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
   .drop-btn { width: 44px; height: 44px; padding: 0; overflow: visible; }
   .drop-btn svg { width: 20px; height: 20px; }
 }
+.carry-sub { margin: -.2rem 0 .7rem; font-size: .9rem; color: #5f645a; font-style: italic; }
