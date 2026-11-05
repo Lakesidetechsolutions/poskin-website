@@ -849,3 +849,14 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
   .drop-btn svg { width: 20px; height: 20px; }
 }
 .carry-sub { margin: -.2rem 0 .7rem; font-size: .9rem; color: #5f645a; font-style: italic; }
+
+/* Bigger home page store photo */
+.hero-banner { min-height: clamp(600px, 82vh, 780px); }
+.hero-bg { object-position: 60% 50%; }
+.hero-shade { background:
+  linear-gradient(90deg, rgba(20,34,26,.86) 0%, rgba(20,34,26,.62) 34%, rgba(20,34,26,.08) 68%, rgba(20,34,26,0) 100%),
+  linear-gradient(0deg, rgba(20,34,26,.45) 0%, rgba(20,34,26,0) 40%); }
+@media (max-width: 760px) {
+  .hero-banner { min-height: 0; }
+  .hero-bg { height: 340px; object-position: 55% 50%; }
+}
