@@ -926,3 +926,18 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
   .sp-list { flex-direction: column; gap: .3rem; }
   .sp-btn { width: 100%; justify-content: center; }
 }
+
+/* Custom mixes page */
+.mix-special { margin-top: 1rem; padding: .8rem 1rem; background: #f1e2c8; border-radius: 10px; color: #6d4615; }
+.mins { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 760px; }
+.min-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.6rem 1.8rem; display: flex; flex-direction: column; }
+.min-label { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #b37731; }
+.min-num { font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 800; color: #1f3529; line-height: 1.1; margin-top: .3rem; letter-spacing: -.02em; }
+.min-sub { color: var(--muted); }
+.mix-cta { background: #2c4a3b; border-radius: 16px; padding: clamp(1.8rem, 4vw, 2.6rem); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.mix-cta h2 { color: #fff; margin: 0 0 .3rem; padding-top: 0 !important; }
+.mix-cta h2::before { display: none !important; }
+.mix-cta p { color: #cfdccf; margin: 0; }
+.mix-btn { background: #c8893e; color: #fff; font-size: 1.1rem; padding: .9rem 1.4rem; }
+.mix-btn:hover { background: #b37731; }
+@media (max-width: 560px) { .mins { grid-template-columns: 1fr; } .mix-btn { width: 100%; justify-content: center; } }
