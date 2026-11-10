@@ -900,3 +900,11 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
 .mason h3 { font-size: 1.6rem; margin-bottom: .3rem; }
 .split .kicker + h2 { padding-top: 0 !important; }
 .split .kicker + h2::before, .award-top .kicker + h2::before { display: none !important; }
+.owners-photo { width: 100%; }
+@media (max-width: 860px) {
+  .owners { padding-top: 2.5rem; }
+  .owners-photo { max-width: 460px; width: 100%; margin: 0 auto 1.4rem; }
+  .owners-photo::before { display: none; }
+  .owners-photo .photo { width: 100%; aspect-ratio: 4 / 5; border-radius: 14px; box-shadow: 0 14px 30px rgba(31,53,41,.2); }
+  .owners-photo figcaption { margin-top: .7rem; }
+}
