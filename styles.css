@@ -860,3 +860,43 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
   .hero-banner { min-height: 0; }
   .hero-bg { height: 340px; object-position: 55% 50%; }
 }
+
+/* Compact local products strip (home) */
+.local-strip-sec { padding: 2.6rem 0; }
+.local-strip { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: center; }
+.ls-text h2 { font-size: 1.5rem; margin-bottom: .4rem; padding-top: 0 !important; }
+.ls-text h2::before { display: none; }
+.ls-text p { color: var(--muted); font-size: .95rem; margin: 0 0 .6rem; }
+.ls-pics { display: grid; grid-template-columns: repeat(4, 1fr); gap: .7rem; }
+.ls-pics .photo { aspect-ratio: 4 / 3; border-radius: 10px; display: block; }
+@media (max-width: 860px) { .local-strip { grid-template-columns: 1fr; gap: 1rem; } .ls-pics { grid-template-columns: repeat(4, 1fr); gap: .4rem; } }
+
+/* ---------- About: owners + community ---------- */
+.kicker { display: inline-block; font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #b37731; margin-bottom: .6rem; }
+.owners { padding-top: clamp(4rem, 8vw, 6rem); padding-bottom: clamp(4rem, 8vw, 6rem); }
+.owners-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.owners-photo { margin: 0; position: relative; }
+.owners-photo::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border-radius: 18px; background: #e9dfca; z-index: 0; }
+.owners-photo .photo { position: relative; z-index: 1; aspect-ratio: 4 / 5; border-radius: 16px; box-shadow: 0 22px 46px rgba(31,53,41,.22); }
+.owners-photo figcaption { position: relative; z-index: 1; margin-top: 1.6rem; text-align: center; font-size: .88rem; color: var(--muted); }
+.owners-text h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); margin-bottom: 1rem; padding-top: 0 !important; }
+.owners-text h2::before { display: none !important; }
+.owners-lead { font-size: 1.2rem; line-height: 1.55; color: #1f3529; font-weight: 500; }
+.owners-text p { color: #3a3f37; }
+.owners-facts { list-style: none; margin: 1.6rem 0 0; padding: 1.2rem 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.owners-facts strong { display: block; color: #1f3529; font-size: .98rem; }
+.owners-facts span { color: var(--muted); font-size: .86rem; line-height: 1.4; display: block; margin-top: .15rem; }
+@media (max-width: 860px) {
+  .owners-grid { grid-template-columns: 1fr; }
+  .owners-photo { max-width: 380px; margin: 0 auto 1rem; }
+  .owners-facts { grid-template-columns: 1fr; gap: .7rem; }
+}
+.community-band { background: #2c4a3b; color: #dbe7df; padding: clamp(3rem, 6vw, 4.5rem) 0; text-align: center; background-image: linear-gradient(90deg, rgba(31,53,41,.92), rgba(31,53,41,.8)), url('images/award-holstein-group.jpg'); background-size: cover; background-position: center 40%; }
+.community-band .kicker { color: #e9b16b; }
+.community-band h2 { color: #fff; font-size: clamp(1.9rem, 3.6vw, 2.6rem); margin-bottom: .6rem; padding-top: 0 !important; }
+.community-band h2::before { display: none !important; }
+.community-band p { max-width: 56ch; margin: 0 auto; font-size: 1.08rem; color: #dbe7df; }
+.mason { margin-top: 4rem; }
+.mason h3 { font-size: 1.6rem; margin-bottom: .3rem; }
+.split .kicker + h2 { padding-top: 0 !important; }
+.split .kicker + h2::before, .award-top .kicker + h2::before { display: none !important; }
