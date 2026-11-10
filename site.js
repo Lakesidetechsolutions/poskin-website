@@ -153,3 +153,13 @@ document.querySelectorAll('.nav-drop').forEach(function (d) {
     var d = document.querySelector('#' + a.dataset.id + ' details'); if (d) d.open = true;
   });
 })();
+
+// Hide time-limited banners after their end date (Central time)
+(function () {
+  try {
+    var parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+    document.querySelectorAll('[data-until]').forEach(function (el) {
+      if (parts > el.getAttribute('data-until')) el.style.display = 'none';
+    });
+  } catch (e) {}
+})();

@@ -908,3 +908,21 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
   .owners-photo .photo { width: 100%; aspect-ratio: 4 / 5; border-radius: 14px; box-shadow: 0 14px 30px rgba(31,53,41,.2); }
   .owners-photo figcaption { margin-top: .7rem; }
 }
+
+/* Monthly specials banner */
+.specials { background: #c8893e; color: #fff; }
+.specials-in { display: flex; align-items: center; gap: 1.6rem; padding: 1rem 0; flex-wrap: wrap; }
+.sp-title { display: flex; flex-direction: column; line-height: 1.1; padding-right: 1.6rem; border-right: 1px solid rgba(255,255,255,.4); }
+.sp-kicker { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; opacity: .9; }
+.sp-title strong { font-size: 1.35rem; font-weight: 800; letter-spacing: -.01em; }
+.sp-list { list-style: none; margin: 0; padding: 0; display: flex; gap: .4rem 1.8rem; flex-wrap: wrap; flex: 1; font-size: 1.02rem; }
+.sp-list b { font-weight: 800; }
+.sp-list a { color: #fff; }
+.sp-btn { background: #fff; color: #7a4a14 !important; padding: .6rem 1.1rem; font-weight: 700; }
+.sp-btn:hover { background: #fdf4e6; }
+@media (max-width: 760px) {
+  .specials-in { flex-direction: column; align-items: flex-start; gap: .7rem; padding: 1.1rem 0; }
+  .sp-title { border-right: 0; padding-right: 0; }
+  .sp-list { flex-direction: column; gap: .3rem; }
+  .sp-btn { width: 100%; justify-content: center; }
+}
