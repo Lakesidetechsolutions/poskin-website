@@ -5,10 +5,21 @@
   var btn = document.querySelector('.menu-btn');
   var nav = document.querySelector('nav.main');
   if (!btn || !nav) return;
+  // Keep the open menu inside the screen so every link can be scrolled to.
+  function fit() {
+    if (!nav.classList.contains('open')) return;
+    var top = nav.parentNode.getBoundingClientRect().bottom;
+    var bar = document.querySelector('.mobile-bar');
+    var barH = bar && getComputedStyle(bar).display !== 'none' ? bar.offsetHeight : 0;
+    nav.style.maxHeight = Math.max(200, window.innerHeight - top - barH) + 'px';
+  }
   btn.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    fit();
   });
+  window.addEventListener('scroll', fit, { passive: true });
+  window.addEventListener('resize', fit);
   nav.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () {
       nav.classList.remove('open');

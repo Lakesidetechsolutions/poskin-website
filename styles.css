@@ -971,3 +971,8 @@ details.more[open] summary::after { transform: rotate(-135deg); margin-top: 4px;
 .sp-title { flex-direction: row; text-align: left; }
 @media (max-width: 1000px) { .specials-in { justify-content: space-between; } }
 @media (max-width: 640px) { .sp-title { justify-content: flex-start; } }
+
+/* Mobile menu scrolls on its own when it's taller than the screen */
+@media (max-width: 860px) {
+  nav.main { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+}
